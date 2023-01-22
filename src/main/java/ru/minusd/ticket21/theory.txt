@@ -1,0 +1,45 @@
+Обработка строк в Java. Класс StringBuilder. Класс StringBuffer.
+
+Строки в Java — это неизменяемые объекты (immutable). Так было сделано для того, чтобы класс-строку можно было сильно оптимизировать и использовать повсеместно. Например, в качестве ключей у коллекции HashMap рекомендуется использовать только immutable-типы.
+
+Однако часто возникают ситуации, когда программисту все же было бы удобнее иметь String-класс, который можно менять. Который не создает новую подстроку при каждом вызове его метода.
+
+Например, у нас есть очень большая строка и мы часто дописываем что-то в ее конец. В этом случае даже коллекция символов (ArrayList<Character>) может быть эффективнее, чем постоянное пересоздание строк и конкатенации объектов типа String.
+
+Именно поэтому в язык Java все же добавили тип String, который можно менять. Называется он StringBuilder
+
+
+Паттерны проектирования программ. Паттерн Фабрика.
+
+Паттерн фабрика - это порождающий паттерн проектирования, который позволяет создавать объекты без необходимости указывать их конкретные классы. Он используется для инкапсуляции создания объектов, позволяя пользователям избегать необходимости знать о конкретных классах объектов, которые они создают.
+
+Вот класс иерархии классов Геометрическая фигура, Прямоугольник и Круг на языке Java, использующий паттерн Фабрика:
+
+public abstract class GeometricFigure {
+    public abstract void draw();
+}
+
+public class Rectangle extends GeometricFigure {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a Rectangle");
+    }
+}
+
+public class Circle extends GeometricFigure {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a Circle");
+    }
+}
+
+public class GeometricFigureFactory {
+    public static GeometricFigure getFigure(String type) {
+        if (type.equals("rectangle")) {
+            return new Rectangle();
+        } else if (type.equals("circle")) {
+            return new Circle();
+        }
+        return null;
+    }
+}
