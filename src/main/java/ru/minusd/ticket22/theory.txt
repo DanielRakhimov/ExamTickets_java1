@@ -1,0 +1,52 @@
+Наследование, виды наследования и его реализация в Java и C++
+
+Наследование (inheritance) — механизм, который позволяет описать новый класс на основе существующего (родительского). При этом свойства и функциональность родительского класса заимствуются новым классом.
+
+Наследование в C++
+
+В Си Плюс-Плюс выделяются несколько типов наследования:
+
+Публичный. Это – public class. Здесь есть общие (public) и защищенные (protected) данные. Они будут наследоваться без корректировки изначально предусмотренного уровня доступа к оным.
+Защищенный. Носит название protected. Вся информация, которая была унаследована, получит статус «защищенной».
+Приватный – private. Все передаваемые электронные материалы будут «приватными».
+
+class Device {
+    public:
+        int serial_number = 12345678;
+
+        void turn_on() {
+            cout << "Device is on" << endl;
+        }
+    private:
+        int pincode = 87654321;
+};
+
+class Computer: public Device {};
+
+
+
+Java:
+Наследование в Java может быть единичным. Это – самый распространенный вариант. Он дает возможность получать свойства только от одного superclass.
+Ключевые слова private, protected, publiс, default управляют доступом. Нет множественного наследования, но класс может реализовывать сколько угодно интерфейсов
+Множественный вариант создает некоторые проблемы в ЯП. Пример – когда суперклассы имеют методы с одними и теми же именами и параметрами. Из Джавы такой вариант исключен.
+
+
+public class Car {
+
+   private String model;
+   private int maxSpeed;
+   private int yearOfManufacture;
+
+   public Car(String model, int maxSpeed, int yearOfManufacture) {
+       this.model = model;
+       this.maxSpeed = maxSpeed;
+       this.yearOfManufacture = yearOfManufacture;
+   }
+
+
+public class Truck extends Car {
+
+   public Truck(String model, int maxSpeed, int yearOfManufacture) {
+       super(model, maxSpeed, yearOfManufacture);
+   }
+}
