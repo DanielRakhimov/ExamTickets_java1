@@ -23,6 +23,7 @@ public class ToEquals {
                     return false;
                 }
             }
+            //восстановление стеков
             while (!tmp.isEmpty()) {
                 stack1.push(tmp.peek());
                 stack2.push(tmp.pop());
