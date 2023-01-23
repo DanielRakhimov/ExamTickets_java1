@@ -108,7 +108,7 @@
 * **[Билет 26](./src/main/java/ru/minusd/ticket26/theory.txt)**
     * Абстрактные методы и классы. Вложенные и анонимные классы.
     * Работа с Датой и временем в Java. Примеры использования.
-    * [Задача](./src/main/java/ru/minusd/ticket26/ArrayListOnList.java) Напишите реализацию структуры ArrayList на
+    * [Задача](./src/main/java/ru/minusd/ticket26/arraylist.java) Напишите реализацию структуры ArrayList на
       списоке.
 * **[Билет 27](./src/main/java/ru/minusd/ticket27/theory.txt)**
     * Перечисления. Синтаксис и применение. Перечисления в switch. Перечисления в аннотациях.
